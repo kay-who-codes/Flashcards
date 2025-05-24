@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards App</title>
+<style>
+        :root {
+            /* Color variables */
+            --background: #131313;
+            --text: #e0e0e0;
+            --primary-accent: #00f3f5;
+            --secondary-accent: #ff4081;
+            --card-background: #1f1f1f;
+            --card-shadow: rgba(0, 243, 245, 0.2);
+            
+            /* Spacing variables */
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-xl: 32px;
+            
+            /* Border radius */
+            --border-radius: 12px;
+            
+            /* Animation speed */
+            --transition-speed: 0.3s;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+        }
+        
+        body {
+            background-color: var(--background);
+            color: var(--text);
+            min-height: 100vh;
+            padding: var(--spacing-md);
+            display: flex;
+            flex-direction: column;
+            line-height: 1.6;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+            padding: var(--spacing-lg) 0;
+        }
+        
+        h1 {
+            font-size: 2rem;
+            margin-bottom: var(--spacing-md);
+            background: linear-gradient(90deg, var(--primary-accent), var(--secondary-accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+        
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: var(--spacing-lg);
+            gap: var(--spacing-md);
+        }
+        
+        button {
+            background-color: var(--card-background);
+            color: var(--text);
+            border: 2px solid var(--primary-accent);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md);
+            cursor: pointer;
+            transition: all var(--transition-speed) ease;
+            min-width: 48px;
+            min-height: 48px;
+            font-size: 1rem;
+            flex: 1;
+        }
+        
+        button:hover, button:focus {
+            background-color: rgba(0, 243, 245, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px var(--card-shadow);
+        }
+        
+        button.active {
+            background-color: var(--primary-accent);
+            color: var(--background);
+        }
+        
+        button.secondary {
+            border-color: var(--secondary-accent);
+        }
+        
+        button.secondary:hover, button.secondary:focus {
+            background-color: rgba(255, 64, 129, 0.1);
+        }
+        
+        button.secondary.active {
+            background-color: var(--secondary-accent);
+        }
+        
+        .card-container {
+            perspective: 1000px;
+            width: 100%;
+            max-width: 600px;
+            min-height: 300px;
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .card {
+            position: relative;
+            width: 100%;
+            min-height: 300px;
+            transition: transform var(--transition-speed) ease;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+        
+        .card.flipped {
+            transform: rotateY(180deg);
+        }
+        
+        .card-face {
+            position: absolute;
+            width: 100%;
+            min-height: 300px;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            padding: var(--spacing-xl);
+            border-radius: var(--border-radius);
+            background-color: var(--card-background);
+            box-shadow: 0 8px 24px var(--card-shadow);
+            overflow: visible;
+        }
+        
+        .card-front {
+            border-left: 4px solid var(--primary-accent);
+        }
+        
+        .card-back {
+            border-left: 4px solid var(--secondary-accent);
+            transform: rotateY(180deg);
+        }
+        
+        .card-content {
+            font-size: 1.5rem;
+            font-weight: 500;
+            max-width: 100%;
+            overflow-wrap: break-word;
+            margin-top: auto;
+            margin-bottom: auto;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .card-notes {
+            margin-top: var(--spacing-lg);
+            padding: 0;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius);
+            font-size: 0.9rem;
+            color: var(--text);
+            opacity: 0.9;
+            width: 100%;
+            max-height: 0;
+            overflow: hidden;
+            transition: all var(--transition-speed) ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            line-height: 1.4;
+        }
+        
+        .card-notes.visible {
+            max-height: none;
+            padding: var(--spacing-md);
+            overflow: visible;
+        }
+        
+        .card-number {
+            position: absolute;
+            bottom: var(--spacing-md);
+            right: var(--spacing-md);
+            font-size: 0.8rem;
+            opacity: 0.6;
+        }
+        
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 600px;
+            gap: var(--spacing-md);
+        }
+        
+        .note-toggle {
+            margin-top: var(--spacing-lg);
+            font-size: 0.9rem;
+            color: var(--secondary-accent);
+            background: none;
+            border: 1px solid var(--secondary-accent);
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: all var(--transition-speed) ease;
+            display: none;
+            min-height: auto;
+            flex: none;
+            align-self: center;
+        }
+        
+        .note-toggle.visible {
+            display: block;
+        }
+        
+        .note-toggle:hover, .note-toggle:focus {
+            background-color: rgba(255, 64, 129, 0.1);
+            transform: none;
+            box-shadow: none;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: auto;
+            padding: var(--spacing-lg) 0;
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        /* Category filter styles */
+        .category-filter {
+            margin-top: var(--spacing-md);
+        }
+        
+        .category-filter label {
+            display: block;
+            margin-bottom: var(--spacing-sm);
+            font-weight: 500;
+        }
+        
+        .category-filter select {
+            background-color: var(--card-background);
+            color: var(--text);
+            border: 2px solid var(--primary-accent);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-sm) var(--spacing-md);
+            font-size: 1rem;
+            min-width: 200px;
+        }
+        
+        .category-filter select:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(0, 243, 245, 0.3);
+        }
+        
+        /* Responsive adjustments */
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .card-container {
+                min-height: 350px;
+            }
+            
+            .card-face {
+                min-height: 350px;
+            }
+            
+            .card-content {
+                font-size: 1.75rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .card-container {
+                min-height: 250px;
+            }
+            
+            .card-face {
+                min-height: 250px;
+            }
+            
+            .card-content {
+                font-size: 1.25rem;
+            }
+            
+            button {
+                padding: var(--spacing-sm);
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* Loading animation */
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+        }
+        
+        .loading-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--primary-accent);
+            margin: 0 6px;
+            animation: dot-pulse 1.5s infinite ease-in-out;
+        }
+        
+        .loading-dot:nth-child(2) {
+            animation-delay: 0.3s;
+            background-color: var(--text);
+        }
+        
+        .loading-dot:nth-child(3) {
+            animation-delay: 0.6s;
+            background-color: var(--secondary-accent);
+        }
+        
+        @keyframes dot-pulse {
+            0%, 100% {
+                transform: scale(0.8);
+                opacity: 0.5;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+        }
+</style>
+</head>
+
+<body>
+    <header>
+        <h1>Flashcards</h1>
+        <div class="category-filter">
+            <label for="categories">Select Categories:</label>
+            <select id="categories" multiple>
+                <option value="all" selected>All Categories</option>
+            </select>
+        </div>
+    </header>
+    
+    <main>
+        <section class="controls">
+            <button id="showFront" class="active">Front</button>
+            <button id="showBack" class="secondary">Back</button>
+        </section>
+        
+        <section class="card-container">
+            <div class="card">
+                <div class="card-face card-front">
+    <div class="card-header">
+        <span class="category-tag"></span>
+    </div>
+    <div class="card-content">Loading flashcards...</div>
+                    <div class="loading">
+                        <div class="loading-dot"></div>
+                        <div class="loading-dot"></div>
+                        <div class="loading-dot"></div>
+                    </div>
+                    <div class="card-number"></div>
+                </div>
+                <div class="card-face card-back">
+                    <div class="card-content"></div>
+                    <div class="card-notes"></div>
+                    <button class="note-toggle">Show Notes</button>
+                    <div class="card-number"></div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="navigation">
+            <button id="prevCard">Previous</button>
+            <button id="randomCard" class="secondary">Get Random Card</button>
+            <button id="nextCard">Next</button>
+        </section>
+    </main>
+    
+    <footer>
+        <p>Flashcards App &copy; 2025</p>
+    </footer>
+    
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // App state
+    const state = {
+        allCards: {},         // Original categorized cards from JSON
+        cards: [],           // Active filtered cards
+        currentCardIndex: 0,
+        showingFront: true,
+        notesVisible: false,
+        isLoading: true,
+        selectedCategories: new Set(['all'])  // Track selected categories
+    };
+
+    // DOM elements
+    const cardElement = document.querySelector('.card');
+    const frontContent = document.querySelector('.card-front .card-content');
+    const backContent = document.querySelector('.card-back .card-content');
+    const cardNotes = document.querySelector('.card-notes');
+    const noteToggle = document.querySelector('.note-toggle');
+    const frontCardNumber = document.querySelector('.card-front .card-number');
+    const backCardNumber = document.querySelector('.card-back .card-number');
+    const showFrontBtn = document.getElementById('showFront');
+    const showBackBtn = document.getElementById('showBack');
+    const prevCardBtn = document.getElementById('prevCard');
+    const nextCardBtn = document.getElementById('nextCard');
+    const randomCardBtn = document.getElementById('randomCard');
+    const loadingElement = document.querySelector('.loading');
+    const categorySelect = document.getElementById('categories');
+
+    // Fetch cards from prompts.json
+    async function fetchCards() {
+        try {
+            const response = await fetch('Assets/prompts.json');
+            
+            if (!response.ok) {
+                throw new Error('Could not load flashcards file');
+            }
+            
+            const data = await response.json();
+            state.allCards = data;
+            
+            // Populate category selector and initialize cards
+            populateCategorySelect(Object.keys(data));
+            updateSelectedCards();
+            
+        } catch (error) {
+            console.error('Error loading flashcards:', error);
+            useDemoCards();
+        } finally {
+            state.isLoading = false;
+            updateCardDisplay();
+        }
+    }
+
+    // Use demo cards if file can't be loaded
+    function useDemoCards() {
+        state.allCards = {
+            "Web Development": [
+                {
+                    front: "What is HTML?",
+                    back: "HyperText Markup Language",
+                    notes: "HTML is the standard markup language for creating web pages."
+                },
+                {
+                    front: "What is CSS?",
+                    back: "Cascading Style Sheets",
+                    notes: "CSS describes how HTML elements should be displayed."
+                }
+            ],
+            "Behaviour Analysis": [
+                {
+                    front: "What are 'emblems' in nonverbal communication?",
+                    back: "Culturally specific gestures with direct verbal translations.",
+                    notes: "Defined by Ekman & Friesen (1969). Unlike illustrators, emblems can stand alone without speech."
+                },
+                {
+                    front: "What are 'illustrators'?",
+                    back: "Gestures that accompany speech to clarify messages.",
+                    notes: ""
+                }
+            ]
+        };
+        populateCategorySelect(Object.keys(state.allCards));
+        updateSelectedCards();
+    }
+
+    // Populate category dropdown with available categories
+    function populateCategorySelect(categories) {
+        categorySelect.innerHTML = '';
+        
+        // Add 'All Categories' option first
+        const allOption = document.createElement('option');
+        allOption.value = 'all';
+        allOption.textContent = 'All Categories';
+        allOption.selected = true;
+        categorySelect.appendChild(allOption);
+        
+        // Add each category as an option
+        categories.forEach(category => {
+            const option = document.createElement('option');
+            option.value = category;
+            option.textContent = category;
+            categorySelect.appendChild(option);
+        });
+    }
+
+    // Update the active cards based on selected categories
+    function updateSelectedCards() {
+        const selected = Array.from(state.selectedCategories);
+        
+        if (selected.includes('all')) {
+            // If 'all' is selected, use all cards
+            state.cards = Object.values(state.allCards).flat();
+        } else {
+            // Otherwise merge cards from selected categories
+            state.cards = selected.reduce((acc, category) => {
+                return acc.concat(state.allCards[category] || []);
+            }, []);
+        }
+
+        // Reset to first card and update display
+        state.currentCardIndex = 0;
+        state.showingFront = true;
+        state.notesVisible = false;
+        updateCardDisplay();
+    }
+
+    // Update the card display based on current state
+    function updateCardDisplay() {
+        if (state.isLoading || state.cards.length === 0) {
+            frontContent.textContent = state.cards.length === 0 ? 
+                "No cards available for selected categories" : 
+                "Loading flashcards...";
+            loadingElement.style.display = "flex";
+            noteToggle.classList.remove('visible');
+            return;
+        }
+        
+        loadingElement.style.display = "none";
+        
+        const currentCard = state.cards[state.currentCardIndex];
+        frontContent.textContent = currentCard.front;
+        backContent.textContent = currentCard.back;
+        cardNotes.textContent = currentCard.notes || '';
+        
+        // Update card numbers
+        const cardNumberText = `${state.currentCardIndex + 1}/${state.cards.length}`;
+        frontCardNumber.textContent = cardNumberText;
+        backCardNumber.textContent = cardNumberText;
+        
+        // Reset notes visibility when changing cards
+        state.notesVisible = false;
+        cardNotes.classList.remove('visible');
+        
+        // Handle notes toggle button
+        if (currentCard.notes && currentCard.notes.trim() !== '') {
+            noteToggle.classList.add('visible');
+            noteToggle.textContent = 'Show Notes';
+        } else {
+            noteToggle.classList.remove('visible');
+        }
+        
+        // Update card side
+        updateCardSide();
+    }
+
+    // Update which side of the card is displayed
+    function updateCardSide() {
+        if (state.showingFront) {
+            cardElement.classList.remove('flipped');
+            showFrontBtn.classList.add('active');
+            showBackBtn.classList.remove('active');
+        } else {
+            cardElement.classList.add('flipped');
+            showFrontBtn.classList.remove('active');
+            showBackBtn.classList.add('active');
+        }
+    }
+
+    // Navigation functions
+    function goToPrevCard() {
+        if (state.currentCardIndex > 0) {
+            state.currentCardIndex--;
+            state.showingFront = true;
+            updateCardDisplay();
+        }
+    }
+
+    function goToNextCard() {
+        if (state.currentCardIndex < state.cards.length - 1) {
+            state.currentCardIndex++;
+            state.showingFront = true;
+            updateCardDisplay();
+        }
+    }
+
+    function getRandomCard() {
+        if (state.cards.length <= 1) return;
+        
+        let randomIndex;
+        do {
+            randomIndex = Math.floor(Math.random() * state.cards.length);
+        } while (randomIndex === state.currentCardIndex);
+        
+        state.currentCardIndex = randomIndex;
+        state.showingFront = true;
+        updateCardDisplay();
+    }
+
+    // Toggle card flip
+    function toggleCardFlip() {
+        state.showingFront = !state.showingFront;
+        updateCardSide();
+    }
+
+    // Toggle notes visibility
+    function toggleNotes() {
+        const currentCard = state.cards[state.currentCardIndex];
+        if (!currentCard || !currentCard.notes || currentCard.notes.trim() === '') return;
+        
+        state.notesVisible = !state.notesVisible;
+        if (state.notesVisible) {
+            cardNotes.classList.add('visible');
+            noteToggle.textContent = 'Hide Notes';
+        } else {
+            cardNotes.classList.remove('visible');
+            noteToggle.textContent = 'Show Notes';
+        }
+    }
+
+    // Handle category selection changes
+    function handleCategoryChange() {
+        const options = Array.from(categorySelect.selectedOptions);
+        const values = options.map(opt => opt.value);
+        
+        // Handle 'all' selection logic
+        if (values.includes('all')) {
+            state.selectedCategories = new Set(['all']);
+            // Deselect other options
+            Array.from(categorySelect.options).forEach(opt => {
+                if (opt.value !== 'all') opt.selected = false;
+            });
+        } else {
+            state.selectedCategories = new Set(values);
+            state.selectedCategories.delete('all');
+        }
+
+        updateSelectedCards();
+    }
+
+    // Event listeners
+    showFrontBtn.addEventListener('click', () => {
+        state.showingFront = true;
+        updateCardSide();
+    });
+
+    showBackBtn.addEventListener('click', () => {
+        state.showingFront = false;
+        updateCardSide();
+    });
+
+    prevCardBtn.addEventListener('click', goToPrevCard);
+    nextCardBtn.addEventListener('click', goToNextCard);
+    randomCardBtn.addEventListener('click', getRandomCard);
+    noteToggle.addEventListener('click', toggleNotes);
+    categorySelect.addEventListener('change', handleCategoryChange);
+
+    // Card click to flip
+    cardElement.addEventListener('click', (e) => {
+        if (e.target === noteToggle) return;
+        toggleCardFlip();
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        switch (e.key) {
+            case 'ArrowLeft':
+                goToPrevCard();
+                break;
+            case 'ArrowRight':
+                goToNextCard();
+                break;
+            case ' ':
+            case 'Enter':
+                e.preventDefault();
+                toggleCardFlip();
+                break;
+            case 'r':
+                getRandomCard();
+                break;
+        }
+    });
+
+    // Swipe detection for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    document.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+    
+    document.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    });
+    
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        if (touchEndX < touchStartX - swipeThreshold) {
+            goToNextCard();
+        }
+        if (touchEndX > touchStartX + swipeThreshold) {
+            goToPrevCard();
+        }
+    }
+
+    // Initialize the app
+    fetchCards();
+});
+</script>
+</body>
+</html>
