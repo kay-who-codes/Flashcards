@@ -1,0 +1,312 @@
+{
+  "Behaviour Analysis": [
+    {
+      "front": "What are 'emblems' in nonverbal communication?",
+      "back": "Culturally specific gestures with direct verbal translations (e.g., thumbs-up for 'good').",
+      "notes": "Defined by Ekman & Friesen (1969). Unlike illustrators, emblems can stand alone without speech."
+    },
+    {
+      "front": "How do 'illustrators' differ from 'adaptors'?",
+      "back": "Illustrators accompany speech to clarify messages (e.g., pointing), while adaptors are unconscious self-touching behaviors (e.g., nail-biting).",
+      "notes": "Adaptors often signal stress; illustrators are intentional and speech-linked."
+    },
+    {
+      "front": "What is the function of 'regulators'?",
+      "back": "Gestures that manage conversation flow (e.g., nodding to encourage speaking, raising a hand to interrupt).",
+      "notes": "Critical for turn-taking in dialogue. Often overlooked in casual analysis."
+    },
+    {
+      "front": "What is 'proxemics' and its four spatial zones?",
+      "back": "The study of personal space usage. Four zones: intimate (0-18 inches), personal (18 inches-4 feet), social (4-12 feet), public (12+ feet).",
+      "notes": "Developed by Edward T. Hall (1966). Violations can cause discomfort or aggression."
+    },
+    {
+      "front": "Define 'haptics' in nonverbal communication.",
+      "back": "The study of touch as communication, including functional, social, friendship-warmth, love-intimacy, and sexual-arousal categories.",
+      "notes": "Touch patterns vary dramatically across cultures and relationships. Power dynamics influence who initiates touch."
+    },
+    {
+      "front": "What are 'affect displays'?",
+      "back": "Facial expressions and body movements that show emotional states, often involuntary and difficult to control completely.",
+      "notes": "Primary channel for emotional leakage. Micro-expressions can reveal concealed emotions."
+    },
+    {
+      "front": "Explain 'chronemics' in behavioral analysis.",
+      "back": "The study of time perception and usage in communication, including punctuality, wait times, and temporal expectations.",
+      "notes": "Monochronic vs. polychronic cultures have vastly different time orientations affecting behavior."
+    },
+    {
+      "front": "What is 'kinesics'?",
+      "back": "The interpretation of body motion communication, including posture, gesture, facial expression, and eye movement.",
+      "notes": "Ray Birdwhistell coined the term. Estimated that 65% of communication is kinesthetic."
+    },
+    {
+      "front": "Define 'paralinguistics' or 'vocalics'.",
+      "back": "Vocal qualities that accompany speech: tone, pitch, volume, rate, pauses, and vocal fillers ('um,' 'uh').",
+      "notes": "Can contradict verbal message. Crucial for detecting deception and emotional states."
+    },
+    {
+      "front": "What is 'environmental communication'?",
+      "back": "How physical surroundings influence behavior and communication, including architecture, lighting, color, and spatial arrangement.",
+      "notes": "Impacts power dynamics, comfort levels, and interaction patterns. Often manipulated in interviews."
+    }
+  ],
+  "Facial Expressions & Micro-expressions": [
+    {
+      "front": "What is 'facial leakage'?",
+      "back": "When true emotions 'leak' through attempted facial control, often visible in lower face while upper face remains controlled.",
+      "notes": "Lower face is harder to control consciously. Upper face (forehead, eyes) more easily manipulated."
+    },
+    {
+      "front": "What is 'facial action coding system' (FACS)?",
+      "back": "Ekman's comprehensive system cataloging all possible facial muscle movements into Action Units (AUs) for objective expression analysis.",
+      "notes": "Uses 44 Action Units. Gold standard for facial expression research and deception detection."
+    }
+  ],
+  "Body Language & Posture": [
+    {
+      "front": "What does 'mirroring' or 'postural echo' indicate?",
+      "back": "Unconscious mimicking of another's posture and gestures, typically indicating rapport, agreement, or attraction.",
+      "notes": "Can be deliberately used to build rapport. Absence may suggest disagreement or discomfort."
+    },
+    {
+      "front": "What is 'territorial behavior' in body language?",
+      "back": "Physical behaviors that claim or defend personal space, including spreading belongings, positioning, and boundary-setting gestures.",
+      "notes": "More pronounced in males and high-status individuals. Varies greatly across cultures."
+    },
+    {
+      "front": "Explain 'power postures' and their psychological effects.",
+      "back": "Expansive postures (hands on hips, arms raised) that increase testosterone, decrease cortisol, and boost confidence.",
+      "notes": "Amy Cuddy's research suggests 2-minute power poses affect hormone levels and performance."
+    },
+    {
+      "front": "What are 'pacifying behaviors'?",
+      "back": "Self-soothing gestures performed under stress: neck touching, hair stroking, hand wringing, leg bouncing.",
+      "notes": "Increase with anxiety levels. Useful indicators of discomfort or deception attempts."
+    },
+    {
+      "front": "Define 'preening behaviors'.",
+      "back": "Grooming gestures like adjusting clothing, smoothing hair, or checking appearance, often indicating attraction or nervousness.",
+      "notes": "May signal romantic interest or desire to make good impression. Context-dependent interpretation."
+    }
+  ],
+  "Eye Contact & Gaze Patterns": [
+    {
+      "front": "Define 'gaze aversion' and its meanings.",
+      "back": "Looking away during conversation. Can indicate lying, embarrassment, attraction, respect (cultural), or cognitive processing.",
+      "notes": "Direction matters: up-right (visual construction), up-left (visual memory), down (feelings/self-talk)."
+    },
+    {
+      "front": "What is 'pupil dilation' and its behavioral significance?",
+      "back": "Involuntary pupil enlargement indicating arousal, interest, attraction, or cognitive load. Cannot be consciously controlled.",
+      "notes": "Also affected by lighting, drugs, and medical conditions. Requires baseline comparison."
+    },
+    {
+      "front": "Explain 'eye blocking' behaviors.",
+      "back": "Covering, closing, or shielding eyes when hearing disturbing information. Instinctive protection response.",
+      "notes": "Includes rubbing eyes, closing them, looking down. Strong indicator of discomfort with information."
+    },
+    {
+      "front": "What is the 'triangle gaze' technique?",
+      "back": "Looking between both eyes and mouth in social settings, or between eyes and forehead in business contexts to maintain appropriate intimacy.",
+      "notes": "Prevents staring while maintaining engagement. Intimate triangle includes mouth area."
+    },
+	{
+  "front": "Define 'lateral eye movement' patterns and their theoretical significance.",
+  "back": "Eye movements theoretically linked to mental processing modes in NLP: Visual recall (up-left) - remembering images; Visual construction (up-right) - creating new images; Auditory recall (left) - remembering sounds; Auditory construction (right) - creating sounds; Kinesthetic/internal dialogue (down-left/down-right) - accessing feelings or self-talk. Also called 'eye accessing cues.'",
+  "notes": "Part of Neuro-Linguistic Programming (NLP) theory developed in the 1970s by Bandler and Grinder. Scientific support is extremely limited with multiple studies failing to replicate claimed patterns. Individual variations are significant, and many people show opposite or inconsistent patterns. Cultural factors, handedness, and individual differences affect eye movements. While popular in some therapeutic and sales contexts, the reliability for determining thought processes or detecting deception is not scientifically validated. Modern neuroscience shows eye movements are influenced by many factors beyond cognitive processing type."
+}
+  ],
+  "Vocal Analysis & Paralinguistics": [
+    {
+      "front": "What vocal changes indicate stress or deception?",
+      "back": "Higher pitch, increased vocal tension, speech hesitations, throat clearing, voice tremor, and changes in speech rhythm.",
+      "notes": "Stress affects laryngeal muscles. Baseline comparison essential as individual voices vary greatly."
+    },
+    {
+      "front": "Define 'vocal fry' and its social implications.",
+      "back": "Low, creaky voice quality at phrase endings. Associated with authority in some contexts, criticized as unprofessional in others.",
+      "notes": "More common in young women. Perceptions vary by gender, age, and cultural background of listener."
+    },
+    {
+      "front": "What is 'uptalk' or 'high rising terminal'?",
+      "back": "Rising intonation at statement endings, making declarations sound like questions. May indicate uncertainty or seeking approval.",
+      "notes": "Can undermine perceived authority. More prevalent in certain demographics and regions."
+    },
+    {
+      "front": "Explain 'speech convergence' and 'divergence'.",
+      "back": "Convergence: adapting speech patterns to match others (builds rapport). Divergence: emphasizing speech differences (maintains distinctiveness).",
+      "notes": "Part of Communication Accommodation Theory. Indicates relationship dynamics and social goals."
+    },
+    {
+      "front": "What are 'vocal adaptors'?",
+      "back": "Unconscious vocal behaviors like throat clearing, sighing, lip smacking, or tongue clicking that often indicate discomfort.",
+      "notes": "Increase under stress. Can be more reliable than conscious speech content for emotional state."
+    },
+    {
+      "front": "Define 'prosody' in speech analysis.",
+      "back": "The rhythm, stress, and intonation patterns of speech that convey meaning beyond words, including emotional undertones.",
+      "notes": "Critical for detecting sarcasm, sincerity, and emotional states. Often preserved in foreign language learning."
+    }
+  ],
+  "Deception Detection": [
+    {
+      "front": "What is the actual accuracy rate of detecting lies without training?",
+      "back": "Approximately 54%, barely better than chance (50%). Overconfidence in detection ability is common.",
+      "notes": "Training can improve accuracy to 60-70%. No single behavior reliably indicates deception."
+    },
+    {
+      "front": "List common myths about deception detection.",
+      "back": "Myths: liars avoid eye contact, touch their nose, fidget more, have longer pauses. Reality: behaviors vary greatly by individual.",
+      "notes": "Cultural background, personality, and stakes affect deceptive behaviors significantly."
+    },
+    {
+      "front": "What is 'dupers delight'?",
+      "back": "Subtle pleasure or excitement some people feel when successfully deceiving others, occasionally visible as micro-expressions of joy.",
+      "notes": "Not universal. More common in high-stakes deception or among those who enjoy manipulation."
+    },
+    {
+      "front": "Explain 'cognitive load' theory in deception.",
+      "back": "Lying requires more mental effort than truth-telling, potentially causing observable signs of increased cognitive processing.",
+      "notes": "May result in slower responses, speech hesitations, or reduced illustrative gestures."
+    },
+    {
+      "front": "What are 'hot spots' in deception detection?",
+      "back": "Moments when verbal and nonverbal channels contradict, suggesting possible deception or emotional conflict.",
+      "notes": "Require further investigation, not conclusive proof. Context and baseline behavior crucial."
+    },
+    {
+      "front": "Define 'statement analysis' basics.",
+      "back": "Examining word choice, pronoun usage, verb tenses, and narrative structure to identify potential deception indicators.",
+      "notes": "Truthful statements typically have consistent pronouns, past tense, and logical sequence."
+    }
+  ],
+  "Cultural Variations": [
+    {
+      "front": "How does eye contact vary across cultures?",
+      "back": "Western cultures value direct eye contact; many Asian, African, and Latin American cultures consider it disrespectful to authority figures.",
+      "notes": "Misinterpretation can lead to unfair judgments about honesty, respect, or engagement levels."
+    },
+    {
+      "front": "What are cultural differences in personal space?",
+      "back": "Northern Europeans prefer larger personal space; Southern Europeans, Latin Americans, and Arabs typically comfortable with closer proximity.",
+      "notes": "Violations can cause significant discomfort and misunderstandings in cross-cultural interactions."
+    },
+    {
+      "front": "How do gesture meanings vary culturally?",
+      "back": "Same gesture can have opposite meanings: thumbs-up is positive in US but offensive in Middle East; OK sign offensive in Brazil.",
+      "notes": "Critical for international business and travel. Assumptions can cause serious misunderstandings."
+    },
+    {
+      "front": "Explain cultural differences in emotional expression.",
+      "back": "Some cultures encourage emotional expressiveness (Mediterranean), others value emotional restraint (East Asian), affecting nonverbal display.",
+      "notes": "Can lead to misperceptions of coldness, insincerity, or lack of self-control across cultures."
+    },
+    {
+      "front": "What are cultural variations in touch behavior?",
+      "back": "High-contact cultures (Latin America, Southern Europe) use more touch; low-contact cultures (Northern Europe, East Asia) use minimal touch.",
+      "notes": "Professional settings require understanding these differences to avoid discomfort or offense."
+    },
+    {
+      "front": "How does hierarchical communication vary culturally?",
+      "back": "High power-distance cultures show more deference behaviors (bowing, indirect eye contact); low power-distance cultures more egalitarian.",
+      "notes": "Affects interpretation of confidence, respect, and appropriate workplace behavior."
+    }
+  ],
+  "Psychological Foundations": [
+    {
+      "front": "What is the 'fundamental attribution error' in behavior analysis?",
+      "back": "Tendency to attribute others' behaviors to personality rather than situational factors, leading to misinterpretation of actions.",
+      "notes": "We judge ourselves by intentions, others by actions. Critical bias in behavioral assessment."
+    },
+    {
+      "front": "Explain 'confirmation bias' in behavioral observation.",
+      "back": "Tendency to notice and interpret behaviors that confirm pre-existing beliefs while ignoring contradictory evidence.",
+      "notes": "Particularly problematic in investigative settings. Requires systematic observation protocols."
+    },
+    {
+      "front": "What is 'emotional contagion'?",
+      "back": "Unconscious mimicking of others' emotions through facial expressions, posture, and vocalizations, leading to shared emotional states.",
+      "notes": "Explains why emotions spread in groups. Foundation of empathy and social bonding."
+    },
+    {
+      "front": "Define 'theory of mind' in behavioral analysis.",
+      "back": "Ability to understand that others have different thoughts, beliefs, and perspectives, crucial for interpreting behavior accurately.",
+      "notes": "Develops around age 4. Deficits associated with autism spectrum disorders and social difficulties."
+    },
+    {
+      "front": "What is 'social desirability bias'?",
+      "back": "Tendency to present oneself favorably, affecting both behavior and self-reporting of behavior in observed settings.",
+      "notes": "Stronger in high-stakes situations. Can mask true attitudes and behaviors."
+    },
+    {
+      "front": "Explain 'priming effects' on behavior.",
+      "back": "How environmental cues or previous experiences unconsciously influence subsequent behavior and decision-making.",
+      "notes": "Subtle environmental factors can significantly alter behavior without conscious awareness."
+    }
+  ],
+  "Applied Behavioral Analysis": [
+    {
+      "front": "What is 'behavioral baselining' and why is it crucial?",
+      "back": "Establishing an individual's normal behavioral patterns before looking for deviations. Essential for accurate interpretation.",
+      "notes": "Requires extended observation period. Individual differences make universal interpretations unreliable."
+    },
+    {
+      "front": "Define 'cluster analysis' in behavior reading.",
+      "back": "Looking for multiple consistent behavioral indicators rather than relying on single gestures or expressions for interpretation.",
+      "notes": "Single behaviors can be misinterpreted. Clusters provide more reliable behavioral assessment."
+    },
+    {
+      "front": "What is 'contextual behavior analysis'?",
+      "back": "Interpreting behaviors within their situational context, considering environmental factors, relationships, and circumstances.",
+      "notes": "Same behavior can mean different things in different contexts. Context is crucial for accuracy."
+    },
+    {
+      "front": "Explain 'sequential behavior analysis'.",
+      "back": "Examining behavior patterns over time rather than isolated moments to understand true behavioral tendencies and changes.",
+      "notes": "Reveals behavioral trends and response patterns that single observations might miss."
+    },
+    {
+      "front": "What are 'behavioral anchors'?",
+      "back": "Specific, observable behaviors that reliably indicate particular emotional or psychological states in an individual.",
+      "notes": "Must be established for each person. Provide reliable indicators for that specific individual."
+    },
+    {
+      "front": "Define 'triangulation' in behavioral assessment.",
+      "back": "Using multiple observation methods, sources, and timeframes to validate behavioral interpretations and increase accuracy.",
+      "notes": "Reduces error from single-source bias. Strengthens confidence in behavioral conclusions."
+    }
+  ],
+  "Interview & Interrogation Applications": [
+    {
+      "front": "What is 'behavioral interview technique'?",
+      "back": "Using behavioral cues to guide questioning, timing, and approach during interviews to maximize information gathering.",
+      "notes": "Requires real-time behavioral assessment skills. Used in law enforcement, HR, and investigative contexts."
+    },
+    {
+      "front": "Explain 'strategic use of silence' in interviews.",
+      "back": "Using pauses after answers to create discomfort that may prompt additional, potentially revealing information.",
+      "notes": "Uncomfortable silence often leads to over-sharing. Cultural sensitivity important in application."
+    },
+    {
+      "front": "What is 'behavioral mirroring' in rapport building?",
+      "back": "Subtly matching interviewee's posture, speech patterns, and energy level to create unconscious connection and trust.",
+      "notes": "Must be subtle to avoid detection. Can significantly improve cooperation and information sharing."
+    },
+    {
+      "front": "Define 'stress escalation' and 'de-escalation' techniques.",
+      "back": "Deliberately increasing or decreasing psychological pressure through environmental control, questioning pace, and behavioral responses.",
+      "notes": "Ethical considerations paramount. Excessive stress can contaminate information reliability."
+    },
+    {
+      "front": "What is 'cognitive interview' technique?",
+      "back": "Method using memory enhancement techniques and behavioral observation to improve recall accuracy and detect inconsistencies.",
+      "notes": "More effective than standard interviews for accurate information retrieval from witnesses."
+    },
+    {
+      "front": "Explain 'behavioral theme development'.",
+      "back": "Building interview narratives around observed behavioral patterns to encourage confession or fuller disclosure.",
+      "notes": "Requires careful behavioral assessment to choose effective themes for each individual."
+    }
+  ]
+}
